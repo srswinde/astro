@@ -3,6 +3,7 @@ from angles import Hour_angle
 
 l=mtgraham()
 
+s="foobar"
 
 for a in range(0,3600*3,60):
 	l.updatetime(60)
