@@ -3,13 +3,15 @@ from angles import *
 import math
 import time
 
-data_files = {'Mercury'  : '/home/scott/Dropbox/programming/scripting/python/astro1/VSOP_Formated/VSOP87B_merc.dat',
-					'Venus'  : '/home/scott/Dropbox/programming/scripting/python/astro1/VSOP_Formated/VSOP87B_ven.dat', 
-					'Earth'  : '/home/scott/Dropbox/programming/scripting/python/astro1/VSOP_Formated/VSOP87B_earth.dat', 
-					'Mars'   : '/home/scott/Dropbox/programming/scripting/python/astro1/VSOP_Formated/VSOP87B_mars.dat', 
-					'Jupiter': '/home/scott/Dropbox/programming/scripting/python/astro1/VSOP_Formated/VSOP87B_jupiter.dat',
-					'Saturn' : '/home/scott/Dropbox/programming/scripting/python/astro1/VSOP_Formated/VSOP87B_saturn.dat',
-					'Neptune':'/home/scott/Dropbox/programming/scripting/python/astro1/VSOP_Formated/VSOP87B_neptune.dat',
+PATH = "/usr/local/VSOP_Formated"
+
+data_files = {'Mercury'  : 		'{0}/VSOP87B_merc.dat'.format(PATH),
+					'Venus'  : 	'{0}/VSOP87B_ven.dat'.format(PATH), 
+					'Earth'  : 	'{0}/VSOP87B_earth.dat'.format(PATH), 
+					'Mars'   : 	'{0}/VSOP87B_mars.dat'.format(PATH), 
+					'Jupiter': 	'{0}/VSOP87B_jupiter.dat'.format(PATH),
+					'Saturn' : 	'{0}/VSOP87B_saturn.dat'.format(PATH),
+					'Neptune':	'{0}/VSOP87B_neptune.dat'.format(PATH),
 					}
 					
 class vector:
