@@ -91,7 +91,7 @@ class Angle():
 			self.unit = sign*( abs( rawval[0] )/360.0 + rawval[1]/( 360*60.0 ) + rawval[2]/( 360*60*60.0 ) )
 
 		elif Type=="dec":
-			if type( raw ) == str:
+			if type( raw ) in [str, unicode]:
 				if '+' in raw:
 					sign = 1
 				elif '-' in raw:
