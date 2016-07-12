@@ -30,7 +30,7 @@ class Angle():
 		"""Angle constructor class"""
 		raw = rawval
 		self.Name = 'Angle'
-		if type(rawval) == str:#Parse angle into list values seperated by delim
+		if type(rawval) in [str, unicode ]:#Parse angle into list values seperated by delim
 		
 			if delim not in rawval: raise delimError("No delimiter found in rawval '%s'. Delimiter is '%s'." %(rawval, delim))
 			else: 
