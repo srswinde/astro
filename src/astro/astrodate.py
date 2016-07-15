@@ -27,12 +27,6 @@ class starDate:
 			self.jd = self.calcJD()
 		self.GMST = self.calcGMST()
 		self.mjd = self.jd - 2400000.5 
-		year, mon, day = self.date
-		hh,mm = self.UT.hours[:2]
-		ss = int(self.UT.hours[-1])
-		ms = int( (self.UT.hours[-1]-ss)*1e6 )
-		print ms
-		self.datetime = datetime.datetime( year, mon, day, hh, mm, ss, ms, pytz.timezone("Universal") )
 		
 		
 	#calculate a calendar date from julian date	
@@ -146,5 +140,13 @@ class starDate:
 		return "the %s of %s %d" %( days[self.date[2]-1], months[self.date[1]-1], self.date[0] )
 
 		
-		
+	def datetime(self):
+		self.GMST = self.calcGMST()
+		self.mjd = self.jd - 2400000.5 
+		year, mon, day = self.date
+		hh,mm = self.UT.hours[:2]
+		ss = int(self.UT.hours[-1])
+		ms = int( (self.UT.hours[-1]-ss)*1e6 )
+		return datetime.datetime( year, mon, day, hh, mm, ss, ms, pytz.timezone("Universal") )
+
 		
