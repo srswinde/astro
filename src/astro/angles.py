@@ -249,6 +249,13 @@ class Angle():
 		return self.__str__()
 		
 	def Format(self, Type='degarc', delim=':', units=False):
+                """params
+                Type: str 
+                    must be degarc (sexagesimal degrees), 
+                    degar180 (sexagesimal degrees betwee -180 +180),
+                    or hours
+                """
+                assert Type in ('degarc', 'hours', 'degarc180')
 		sign=''
 		if Type=='degarc':
 			l = self.degarc
