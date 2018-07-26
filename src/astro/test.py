@@ -1,8 +1,8 @@
-from astrolib2 import starDate, locale
-from angles import *
+from .astrolib2 import starDate, locale
+from .angles import *
 import math
-from planets import *
-import locales
+from .planets import *
+from . import locales
 
 d = starDate()
 
@@ -23,7 +23,7 @@ def doeq2hor():
 		name,ra,dec = [i for i in line.replace('\n', '').split("\t") if i != '' and i != "\n"][0:3]
 		o=astroobj(name,ra,dec)
 		alt,az = Tucson.eq2hor(o.ra,o.dec)
-		print name, alt, az
+		print(name, alt, az)
 
 def testPlanets():
 	e=Earth(d.jd)
@@ -32,13 +32,13 @@ def testPlanets():
 	s = Tucson.doPlanets()
 	for a in s:
 		alt, az = Tucson.eq2hor(a.ra, a.dec)
-		print a.name , alt, az
-	print 
+		print(a.name , alt, az)
+	print() 
 	Tucson.updatetime(60)
 	s = Tucson.doPlanets()
 	for a in s:
 		alt, az = Tucson.eq2hor(a.ra, a.dec)
-		print a.name , alt, az
+		print(a.name , alt, az)
 	
 def testrise_set(p):
 	p = place
@@ -52,6 +52,6 @@ for a in range(2*365):
 	place.updatetime(24*3600)
 	az = testrise_set(place).deg10
 	if az<287 and az>285:
-		print place.stardate.date
+		print(place.stardate.date)
 	#print place.stardate.jd-jd0,testrise_set(place).deg10
 	

@@ -1,4 +1,4 @@
-from angles import *
+from .angles import *
 import math
 import time
 import datetime

@@ -1,8 +1,8 @@
 #!/usr/bin/python
 
-from locales import tucson
-from astrodate import starDate
-from angles import Hour_angle
+from .locales import tucson
+from .astrodate import starDate
+from .angles import Hour_angle
 import sys
 
 def night():
@@ -15,7 +15,7 @@ def night():
 		if alt.deg10 > 90:
 			mins+=1
 		
-	print mins
+	print(mins)
 
 
 def sunset( place ):
@@ -41,7 +41,7 @@ def sunset( place ):
 	
 def planet_at_sunset( planetStr, outfile ):	
 	pl = tucson()
-	print pl.stardate.date
+	print(pl.stardate.date)
 	for a in range(1, 365, 1):
 		pl.updatetime(24*60*60)
 		
@@ -73,7 +73,7 @@ if __name__ == "__main__":
 	else:
 		for plan in ["Mercury", "Venus", "Mars", "Jupiter", "Saturn", "Neptune"]:
 			planet_file = open("/home/scott/planets/fivehour/"+plan.lower()+".dat", 'w')
-			print plan
+			print(plan)
 			planet_at_sunset(plan, planet_file)
 			planet_file.close()
 			
