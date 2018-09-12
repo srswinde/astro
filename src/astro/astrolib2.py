@@ -1,6 +1,6 @@
-from angles import *
-from astrodate import starDate
-import planets
+from .angles import *
+from .astrodate import starDate
+from . import planets
 import time
 import math
 import collections
@@ -255,8 +255,8 @@ def precess(jd_i=2451545.0, jd_f=False, calendar='J', ra=False, dec=False, obj=F
 	B = math.cos(theta)*math.cos(dec)*math.cos(ra + zeta) - math.sin(theta)*math.sin(dec)
 	C = math.sin(theta)*math.cos(dec)*math.cos(ra + zeta) + math.cos(theta)*math.sin(dec)
 	
-	print T, t
-	print "Coeffs are ",A,B,C
+	print(T, t)
+	print("Coeffs are ",A,B,C)
 	ra_p = Angle( math.atan2(A, B) ) + z
 	if (90-dec.deg10) > 5:
 		dec_p = Angle( math.asin(C) )

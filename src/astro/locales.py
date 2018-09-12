@@ -1,6 +1,6 @@
-from angles import *
-from astrolib2 import locale
-from astrodate import starDate
+from .angles import *
+from .astrolib2 import locale
+from .astrodate import starDate
 
 class tucson(locale):
 	def __init__( self, stardate=False ):
